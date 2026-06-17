@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # LevelUp Club
 
 A hybrid web platform combining AI-driven personalized career guidance with a LinkedIn-like professional community.
@@ -344,3 +345,7 @@ The backend uses Express.js with Prisma ORM for database operations.
 ## License
 
 This project is licensed under the MIT License.
+=======
+# LevelUpClubNew
+a ai based career guidance platform
+>>>>>>> 5b333fc557274133f8dcef8a44206300fe29c2f3
