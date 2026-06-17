@@ -1,0 +1,46 @@
+{
+  "name": "career_recommendation",
+  "version": "1.1.0",
+  "model": "gemini-pro",
+  "prompt": "You are an expert career counselor and industry analyst. Input: {user_profile}, {test_results}, {user_preferences}, {context}.\nTask: Recommend 5-10 career paths ranked by suitability using a weighted scoring system. Calculate a comprehensive CareerScore using this formula: CareerScore = 0.4*RIASEC + 0.3*Skills + 0.2*Behavior + 0.1*Goals. For each career produce structured JSON:\n- career_id\n- career_name\n- match_score (0-100)\n- short_description (<=50 words)\n- why_this_fit (3-5 bullet points tying to user data)\n- required_skills (ordered)\n- recommended_learning_path (ordered steps with estimated hours and resources)\n- realistic_salary_estimate_by_country (keyed by country)\n- companies_hiring (list of sample companies and why)\n- suggested_next_actions (3-5 tasks, each with XP estimate)\n- career_type_weights (show how each data source contributed to the score)\nConstraints:\n- Provide concise, factual language.\n- Limit resources to reputable learning platforms and free options where possible.\n- Do not hallucinate companies' open roles — mark as \"representative\" if unknown.\n- Ensure recommendations are diverse and not repetitive.\nReturn only valid JSON with keys: matches, metadata {model_version, generated_at}.",
+  "example_input": {
+    "user_profile": {
+      "name": "Alex Johnson",
+      "headline": "Computer Science Student",
+      "education": [
+        {
+          "degree": "BSc Computer Science",
+          "institution": "University of Technology",
+          "year": "2023"
+        }
+      ],
+      "skills": [
+        "Python",
+        "JavaScript",
+        "Data Structures"
+      ]
+    },
+    "test_results": {
+      "riasec": {
+        "R": 20,
+        "I": 85,
+        "A": 10,
+        "S": 30,
+        "E": 15,
+        "C": 12
+      },
+      "aptitude": {
+        "logical": 80,
+        "numerical": 70,
+        "verbal": 60
+      }
+    },
+    "user_preferences": {
+      "location": "United States",
+      "remote": true
+    },
+    "context": {
+      "country": "United States"
+    }
+  }
+}

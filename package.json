@@ -1,0 +1,23 @@
+{
+  "name": "level-up-club",
+  "version": "1.0.0",
+  "description": "A hybrid web platform combining AI-driven personalized career guidance with a LinkedIn-like professional community",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node start-dev.js",
+    "setup": "node setup.js",
+    "test-connection": "node test-connection.js",
+    "check-setup": "node check-setup.js",
+    "verify": "node verify-setup.js",
+    "kill-ports": "node kill-ports.js",
+    "test-tailwind": "cd client && npm run test-tailwind",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "jsonwebtoken": "^9.0.2"
+  }
+}

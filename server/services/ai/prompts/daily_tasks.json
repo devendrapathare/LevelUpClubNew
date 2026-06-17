@@ -1,0 +1,27 @@
+{
+  "name": "daily_tasks",
+  "version": "1.1.0",
+  "model": "gemini-2.0-flash",
+  "prompt": "You are an adaptive learning task generator. Input: {career}, {user}, {taskHistory}, {currentTasks}.\nTask: Generate 3-5 unique daily tasks personalized to the user's career path, level, XP, and task history.\nFor each task provide:\n- task_id\n- description\n- estimated_time_minutes\n- learning_resource_link (optional)\n- xp_reward\nConstraints:\n- Tasks must be appropriate for the user's level (beginner, intermediate, advanced)\n- Tasks should build upon previously completed tasks\n- Tasks must not repeat recently completed tasks\n- XP rewards should match the user's level (higher levels = more XP)\n- Tasks should progressively increase in difficulty as user levels up\nReturn only valid JSON with keys: tasks.",
+  "example_input": {
+    "career": {
+      "career_name": "Software Engineer",
+      "required_skills": ["JavaScript", "Python", "Algorithms"]
+    },
+    "user": {
+      "id": "user123",
+      "name": "Alex Johnson",
+      "level": 3,
+      "xp": 150
+    },
+    "taskHistory": [
+      {
+        "title": "Complete JavaScript basics tutorial",
+        "description": "Learn variables, functions, and control structures",
+        "xp_reward": 25,
+        "completed_at": "2023-05-01T10:00:00Z"
+      }
+    ],
+    "currentTasks": []
+  }
+}

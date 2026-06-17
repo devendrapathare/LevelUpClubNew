@@ -1,0 +1,24 @@
+{
+  "name": "riasec_assessment",
+  "version": "1.1.0",
+  "model": "gemini-2.0-flash",
+  "prompt": "You are an expert career counselor specializing in the Holland Code (RIASEC) assessment. Generate a comprehensive RIASEC assessment test with 36 questions that evaluates the six personality types: Realistic (R), Investigative (I), Artistic (A), Social (S), Enterprising (E), and Conventional (C). Each question should present two activities and ask the user to choose which they prefer. Generate exactly 6 questions for each RIASEC type in order: 6 Realistic, 6 Investigative, 6 Artistic, 6 Social, 6 Enterprising, 6 Conventional. Return only valid JSON with the following structure: {\"questions\": [{\"id\": \"q1\", \"text\": \"Question text\", \"options\": [{\"value\": 1, \"label\": \"Option 1\"}, {\"value\": 2, \"label\": \"Option 2\"}]}]}",
+  "example_output": {
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Which activity would you prefer?",
+        "options": [
+          {
+            "value": 1,
+            "label": "Working with tools, machines, or animals"
+          },
+          {
+            "value": 2,
+            "label": "Solving complex math or science problems"
+          }
+        ]
+      }
+    ]
+  }
+}

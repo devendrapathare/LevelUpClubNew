@@ -1,0 +1,3824 @@
+/* App-specific styles */
+.app, .app > div {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Header container styles */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo {
+  height: 30px;
+  width: auto;
+}
+
+.brand-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.assessment-content {
+  min-height: 300px; /* Or any visible height */
+  background-color: #f0f7ff; /* Updated from rgba(0,0,0,0.01) */
+}
+
+.assessment-navigation .btn {
+  background-color: #46abff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.assessment-navigation .btn:hover {
+  background-color: #3a8fd9;
+}
+
+.assessment-navigation .btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Preserve fixed positioning exceptions */
+.theme-toggle {
+  position: fixed;
+  max-width: unset;
+}
+
+.profile-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  min-width: 200px;
+  z-index: 1000;
+  border: 1px solid #e5e7eb;
+}
+
+.profile-dropdown-menu p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.profile-dropdown-menu small {
+  display: block;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.profile-dropdown-menu hr {
+  margin: 0.5rem 0;
+  border-color: #f3f4f6;
+}
+
+.profile-dropdown img {
+  width: 36px;
+  height: 36px;
+}
+
+.profile-dropdown img:hover {
+  opacity: 0.9;
+}
+
+.profile-dropdown-menu button:hover {
+  background: #f8f9fa;
+}
+
+.profile-dropdown img {
+  width: 36px;
+  height: 36px;
+}
+
+.profile-dropdown-menu .btn-outline-danger {
+  color: #3182ce; /* Blue text */
+  border-color: #3182ce; /* Blue border */
+}
+
+.profile-dropdown-menu .btn-outline-danger:hover,
+.profile-dropdown-menu .btn-outline-danger:active {
+  background-color: #38a169; /* Green background */
+  color: white;
+  border-color: #38a169; /* Green border */
+}
+
+.profile-dropdown-menu .btn-outline-danger .bi {
+  color: inherit; /* Inherits parent text color */
+}
+
+.profile-card-container {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 0.5rem;
+  z-index: 100;
+}
+
+/* Results Page Styling */
+.riasec-assessment.results {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.riasec-assessment.results h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.riasec-assessment.results p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.career-recommendations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .career-recommendations {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.career-card {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.career-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.career-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.career-header h3::before {
+  content: none; /* Remove ranking number */
+}
+
+.match-score {
+  display: block;
+  color: #46abff;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.career-details {
+  margin: 1.5rem 0;
+}
+
+.btn.select-career-btn {
+  width: 100%;
+  background-color: #46abff;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.btn.select-career-btn:hover {
+  background-color: #3a8fd9;
+}
+
+/* Career Assessment Centering */
+.career-assessment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Content Alignment */
+.assessment-content,
+.career-recommendations {
+  text-align: left;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Student Dashboard Styling */
+.student-dashboard {
+  background-color: #f7faff;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Profile Section */
+.profile-card, .progress-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-info h5 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.level-display {
+  color: #46abff;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  background: #f0f0f0;
+  border-radius: 20px;
+  height: 10px;
+  margin: 0.5rem 0;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 20px;
+  background: #46abff;
+  transition: width 0.5s ease;
+}
+
+/* Goals Section */
+.goals-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.goal-box {
+  flex: 1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.goal-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.goal-box-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.goal-box-icon {
+  font-size: 1.8rem;
+  margin-right: 0.75rem;
+}
+
+.monthly-goals .goal-box-header {
+  color: #46abff;
+}
+
+.yearly-goals .goal-box-header {
+  color: #ff6b6b;
+}
+
+.goal-box-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.goal-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.goal-item:last-child {
+  border-bottom: none;
+}
+
+.goal-title {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.goal-progress {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.goal-description {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.progress {
+  height: 10px;
+  border-radius: 5px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.monthly-goals .progress-bar {
+  background: linear-gradient(90deg, #46abff, #3a8fd9);
+}
+
+.yearly-goals .progress-bar {
+  background: linear-gradient(90deg, #ff6b6b, #ff5252);
+}
+
+.no-goals {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  padding: 2rem;
+}
+
+/* Tasks Section */
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tasks-header h2 {
+  font-size: 1.75rem;
+}
+
+.generate-tasks-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.task-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.task-icon {
+  margin-right: 1rem;
+  color: #46abff;
+  font-size: 1.5rem;
+}
+
+.task-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.task-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.upload-btn {
+  background: #46abff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-left: auto;
+  min-width: 140px;
+}
+
+/* RIASEC Assessment Styles */
+.riasec-assessment {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.riasec-assessment .assessment-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.riasec-assessment .assessment-header h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.riasec-assessment .progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.riasec-assessment .progress-fill {
+  height: 100%;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+.riasec-assessment .progress-text {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.riasec-assessment .question-container {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.riasec-assessment .assessment-title {
+  color: #2c3e50;
+  font-size: 22px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.riasec-assessment .question-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.riasec-assessment .option-button {
+  display: block;
+  padding: 20px;
+  border: 2px solid #bdc3c7;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  text-align: center;
+  font-size: 16px;
+}
+
+.riasec-assessment .option-button:hover {
+  border-color: #3498db;
+  background-color: #f8f9fa;
+}
+
+.riasec-assessment .option-button.selected {
+  border-color: #3498db;
+  background-color: #e1f0fa;
+  font-weight: bold;
+}
+
+.riasec-assessment .radio-input {
+  display: none;
+}
+
+.riasec-assessment .assessment-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.riasec-assessment .btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.riasec-assessment .btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.riasec-assessment .btn-primary:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.riasec-assessment .btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.riasec-assessment .btn-secondary:hover:not(:disabled) {
+  background-color: #7f8c8d;
+}
+
+.riasec-assessment .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.riasec-assessment .answered-count {
+  text-align: center;
+  margin-top: 20px;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.riasec-assessment .loading-container {
+  text-align: center;
+}
+
+.riasec-assessment .loading {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.riasec-assessment .loading-details {
+  font-size: 16px;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.riasec-assessment .career-recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.riasec-assessment .career-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.riasec-assessment .career-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.riasec-assessment .career-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.riasec-assessment .match-score {
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.riasec-assessment .career-details {
+  margin: 20px 0;
+}
+
+.riasec-assessment .skills-section h4,
+.riasec-assessment .weights-section h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.riasec-assessment .weights-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.riasec-assessment .weights-section li {
+  padding: 5px 0;
+  color: #7f8c8d;
+}
+
+.riasec-assessment .select-career-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.riasec-assessment .select-career-btn:hover {
+  background-color: #219653;
+}
+
+.riasec-assessment .confirmation-card {
+  background: white;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.riasec-assessment .confirmation-card h3 {
+  color: #27ae60;
+  margin-bottom: 20px;
+}
+
+.upload-btn {
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.upload-btn:hover {
+  background: #3a8fd9;
+}
+
+/* Resume Analysis */
+.resume-analysis {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.resume-analysis h3 {
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #46abff;
+  padding-bottom: 0.5rem;
+}
+
+.analysis-metadata {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-ai {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.badge-mock {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+.career-badge {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.analysis-section {
+  margin-bottom: 1.5rem;
+}
+
+.analysis-section h4 {
+  color: #46abff;
+  margin-bottom: 0.75rem;
+}
+
+.analysis-section ul {
+  padding-left: 1.5rem;
+}
+
+.analysis-section li {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-secondary:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
+}
+
+/* Leaderboard */
+.leaderboard-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 2rem;
+}
+
+.leaderboard-header {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.leaderboard-rank {
+  font-weight: 600;
+  width: 3rem;
+}
+
+.leaderboard-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #46abff;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.leaderboard-user {
+  flex: 1;
+}
+
+.leaderboard-points {
+  color: #46abff;
+  font-weight: 600;
+}
+
+/* Connections Page Styling */
+.connections {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: #f7faff;
+}
+
+.connections h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.search-filter-bar {
+}
+
+/* Task History Styling */
+.task-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 85vh;
+  width: 100%;
+  padding: 2rem;
+}
+
+.task-history-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.task-history-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  width: 100%;
+}
+
+.task-history-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.task-history-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.task-history-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.task-history-box {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.task-history-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.task-history-box-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.task-history-box-icon {
+  font-size: 1.8rem;
+  margin-right: 0.75rem;
+  color: #46abff;
+}
+
+.task-history-box-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: #333;
+}
+
+.no-completed-tasks {
+  text-align: center;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.no-completed-tasks i {
+  font-size: 3rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+}
+
+.no-completed-tasks h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.no-completed-tasks p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.completed-tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.task-history-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border-left: 4px solid #46abff;
+  transition: all 0.2s ease;
+}
+
+.task-history-item:hover {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.task-history-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.task-history-item-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.task-history-item-description {
+  color: #666;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.task-history-item-badge {
+  background: #46abff;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.task-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.task-meta-item {
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.task-meta-item i {
+  margin-right: 0.5rem;
+}
+
+.task-file-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+}
+
+.task-file-link .btn {
+  background: #46abff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.task-file-link .btn:hover {
+  background: #3a8fd9;
+}
+
+.task-history-loading {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+}
+
+.search-filter-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.search-filter-bar input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-filter-bar select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.connection-section h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+}
+
+.connection-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.user-details h4 {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.user-details p {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.connection-action {
+  background: #e8f7ff;
+  color: #0077cc;
+  border: 1px solid #cceeff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+}
+
+.tabs button.active {
+  color: #3182ce;
+  font-weight: 600;
+}
+
+.tabs button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #3182ce;
+}
+
+.connect-btn {
+  background: #3182ce;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.connect-btn:hover {
+  background: #2c6cb0;
+}
+
+/* Messaging Page Styling */
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.messages-header {
+  margin-bottom: 2rem;
+}
+
+.messages-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.new-chat-btn {
+  background: #3182ce;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 1.5rem;
+}
+
+.new-chat-btn:hover {
+  background: #2c6cb0;
+}
+
+.messages-description {
+  color: #666;
+  font-size: 1rem;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* Message Search Styling */
+.message-search {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.search-header h3 {
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.cancel-search {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.search-results {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.search-result-item:hover {
+  background: #f7faff;
+}
+
+.search-result-item .user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-result-item .user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.search-result-item .user-details h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.search-result-item .user-details p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.search-loading, .no-results {
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+}
+
+/* Messages Empty State Styling */
+.messages-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.messages-empty-header {
+  margin-bottom: 2rem;
+}
+
+.messages-empty-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.new-chat-btn {
+  background: #3182ce;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.new-chat-btn:hover {
+  background: #2b6cb0;
+}
+
+.messages-empty-description {
+  color: #666;
+  font-size: 1rem;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+
+
+/* Footer Styling */
+footer {
+  width: 100%;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* Community Feed Styling */
+.community-feed {
+  background-color: #f0f7ff;
+  padding: 2rem 0;
+  min-height: 100vh;
+}
+
+.feed-container {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Create Post Section */
+.create-post {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.create-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.post-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-author .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.author-info h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.author-info p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.create-post textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.media-preview {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.preview-container {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.preview-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.remove-preview {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ef4444;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Post Options Button */
+.post-options {
+  position: relative;
+  margin-left: auto;
+}
+
+.post-options-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0.25rem;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-options-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.delete-options-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 0.5rem 0;
+  min-width: 150px;
+  z-index: 1000;
+  border: 1px solid #e5e7eb;
+}
+
+.delete-post-btn {
+  background: none;
+  border: none;
+  color: #dc2626;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.delete-post-btn:hover {
+  background-color: #fef2f2;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.media-input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.media-input .btn {
+  background: #f1f3f5;
+  color: #495057;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.media-input .btn:hover {
+  background: #e5e7eb;
+}
+
+.file-info {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.post-button {
+  background: #3182ce;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.post-button:hover:not(:disabled) {
+  background: #2c6cb0;
+}
+
+.post-button:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+}
+
+/* Posts List */
+.post {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-header .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-author-info h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.post-author-info p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.post-content {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.post-media {
+  width: 100%;
+  margin: 1.5rem 0 2rem;
+}
+
+.post-media img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
+  background-color: #f8fafc;
+}
+
+.post-media img:last-child {
+  margin-bottom: 0;
+}
+
+.post-media img:hover {
+  transform: scale(1.02);
+}
+
+/* Action Buttons */
+.post-actions {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f4f8;
+  margin-top: 1rem;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #4b5563;
+}
+
+.action-button:hover {
+  background-color: #f3f4f6;
+}
+
+.action-button.liked {
+  color: #3182ce;
+}
+
+.action-icon {
+  font-size: 1.2rem;
+}
+
+/* Comments Section */
+.post-comments {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f4f8;
+}
+
+.add-comment {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-comment .comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.comment-submit-btn {
+  background: #3182ce;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.comment-submit-btn:hover {
+  background: #2c6cb0;
+}
+
+.comment {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.comment .comment-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment-content {
+  flex: 1;
+  background: #f9fafb;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+}
+
+.comment-content h5 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.comment-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #374151;
+}
+
+.no-posts {
+  text-align: center;
+  padding: 3rem;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .create-post, 
+  .post {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .post-header {
+    gap: 0.75rem;
+  }
+  
+  .post-header .avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .add-comment {
+    gap: 0.75rem;
+  }
+  
+  .add-comment .comment-avatar,
+  .comment .comment-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .post-media img {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-media img {
+    max-height: 300px;
+  }
+}
+
+/* Error Boundary Styling */
+.error-fallback {
+  background: #fff8f8;
+  border: 1px solid #ffcccc;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.error-fallback h3 {
+  color: #cc0000;
+}
+
+.error-fallback button {
+  background: #3182ce;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+/* User Profile Redesign */
+.user-profile-container {
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  background-color: #F9FAFB;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.user-profile-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .user-profile-content {
+    grid-template-columns: 30% 70%;
+  }
+}
+
+/* Profile Header */
+.user-profile-header {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.user-profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.user-profile-info {
+  text-align: left;
+}
+
+.user-profile-info h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.user-profile-headline {
+  color: #6B7280;
+  margin-bottom: 1.5rem;
+}
+
+/* Profile Sections */
+.user-profile-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.user-profile-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  border-bottom: 1px solid #E5E7EB;
+  padding-bottom: 0.75rem;
+}
+
+/* Input Elements */
+.user-profile-section input[type="text"],
+.user-profile-section textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.user-profile-section textarea {
+  max-height: 150px;
+  overflow-y: auto;
+  resize: vertical;
+}
+
+/* Skills Section */
+.skills-input {
+  margin-bottom: 2rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.skill-tag {
+  background-color: #EBF5FB;
+  color: #0077B6;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Experience/Education Items */
+.experience-item,
+.education-item {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 3px solid #E5E7EB;
+}
+
+.experience-item h3,
+.education-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.experience-dates,
+.education-dates {
+  color: #6B7280;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #0077B6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #005b8c;
+}
+
+.btn-danger {
+  background-color: #DC3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .user-profile-header,
+  .user-profile-section {
+    padding: 1.5rem;
+  }
+  
+  .user-profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* Profile Card Styling */
+.profile-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 280px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.profile-card-container .avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+.profile-card-container .user-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.profile-card-container .user-email {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+  word-break: break-all;
+}
+
+.profile-card-container .logout-button {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  background-color: #3182ce;
+  border: 1px solid #3182ce;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s;
+}
+
+.profile-card-container .logout-button:hover {
+  background-color: #2c6cb0;
+}
+
+/* User Profile - Final CSS Enhancements */
+/* Input and Textarea Uniform Styling */
+.user-profile-section input[type="text"],
+.user-profile-section textarea,
+.post-input textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.user-profile-section textarea,
+.post-input textarea {
+  max-height: 150px;
+  min-height: 100px;
+  overflow-y: auto;
+  resize: vertical;
+}
+
+/* Post Creation Form Alignment */
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f4f8;
+  margin-top: 1rem;
+}
+
+.media-input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.media-status {
+  color: #6B7280;
+  font-size: 0.9rem;
+}
+
+.media-input .btn {
+  background: #f1f3f5;
+  color: #495057;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.media-input .btn:hover {
+  background: #e5e7eb;
+}
+
+.post-button {
+  background: #0077B6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.post-button:hover {
+  background: #005b8c;
+}
+
+.post-button:disabled {
+  background: #E5E7EB;
+  color: #9CA3AF;
+  cursor: not-allowed;
+}
+
+/* Maintain Previous Aesthetics */
+.user-profile-container {
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  background-color: #F9FAFB;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.user-profile-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .user-profile-content {
+    grid-template-columns: 30% 70%;
+  }
+}
+
+.user-profile-header {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.user-profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.user-profile-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.user-profile-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  border-bottom: 1px solid #E5E7EB;
+  padding-bottom: 0.75rem;
+}
+
+.skills-input {
+  margin-bottom: 2rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.skill-tag {
+  background-color: #EBF5FB;
+  color: #0077B6;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.experience-item,
+.education-item {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 3px solid #E5E7EB;
+}
+
+.btn-primary {
+  background-color: #0077B6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #005b8c;
+}
+
+.btn-danger {
+  background-color: #DC3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+}
+
+@media (max-width: 768px) {
+  .user-profile-header,
+  .user-profile-section {
+    padding: 1.5rem;
+  }
+  
+  .user-profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* User Profile Meta Info */
+.user-profile-meta-info {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.user-profile-meta-tag {
+  background-color: #EBF5FB;
+  color: #0077B6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* User Profile - Final CSS Enhancements */
+/* Input and Textarea Uniform Styling */
+.user-profile-section input[type="text"],
+.user-profile-section textarea,
+.post-input textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.user-profile-section textarea,
+.post-input textarea {
+  max-height: 150px;
+  min-height: 100px;
+  overflow-y: auto;
+  resize: vertical;
+}
+
+/* Post Creation Form Alignment */
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f4f8;
+  margin-top: 1rem;
+}
+
+.media-input {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.media-status {
+  color: #6B7280;
+  font-size: 0.9rem;
+}
+
+.media-input .btn {
+  background: #f1f3f5;
+  color: #495057;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.media-input .btn:hover {
+  background: #e5e7eb;
+}
+
+.post-button {
+  background: #0077B6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.post-button:hover {
+  background: #005b8c;
+}
+
+.post-button:disabled {
+  background: #E5E7EB;
+  color: #9CA3AF;
+  cursor: not-allowed;
+}
+
+/* Maintain Previous Aesthetics */
+.user-profile-container {
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  background-color: #F9FAFB;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.user-profile-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .user-profile-content {
+    grid-template-columns: 30% 70%;
+  }
+}
+
+.user-profile-header {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.user-profile-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+}
+
+.user-profile-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.user-profile-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  border-bottom: 1px solid #E5E7EB;
+  padding-bottom: 0.75rem;
+}
+
+.skills-input {
+  margin-bottom: 2rem;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.skill-tag {
+  background-color: #EBF5FB;
+  color: #0077B6;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.experience-item,
+.education-item {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  border-left: 3px solid #E5E7EB;
+}
+
+.btn-primary {
+  background-color: #0077B6;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #005b8c;
+}
+
+.btn-danger {
+  background-color: #DC3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #bb2d3b;
+}
+
+@media (max-width: 768px) {
+  .user-profile-header,
+  .user-profile-section {
+    padding: 1.5rem;
+  }
+  
+  .user-profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* WhatsApp-style Messaging Interface */
+.whatsapp-messaging {
+  display: flex;
+  height: calc(100vh - 60px);
+  background-color: #f0f2f5;
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+}
+
+/* Contact List Sidebar */
+.contacts-sidebar {
+  width: 30%;
+  min-width: 300px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.contacts-header {
+  padding: 10px 16px;
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-right: 1px solid #e0e0e0;
+}
+
+.contacts-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.new-chat-btn.whatsapp {
+  background: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background 0.2s;
+}
+
+.new-chat-btn.whatsapp:hover {
+  background: #2c6cb0;
+}
+
+/* Search Container */
+.search-container.whatsapp {
+  padding: 8px 15px;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.search-input.whatsapp {
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 18px;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Conversations List */
+.conversations-list.whatsapp {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.conversation-item.whatsapp {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.conversation-item.whatsapp:hover {
+  background-color: #f5f5f5;
+}
+
+.conversation-item.whatsapp.active {
+  background-color: #e9ecef;
+}
+
+.conversation-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #3182ce;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-right: 15px;
+  position: relative;
+}
+
+.online-indicator {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #4caf50;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  bottom: 0;
+  right: 0;
+}
+
+.conversation-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.conversation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.conversation-header h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.timestamp.whatsapp {
+  font-size: 0.75rem;
+  color: #666666;
+  flex-shrink: 0;
+}
+
+.last-message {
+  font-size: 0.85rem;
+  color: #666666;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Chat Area */
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #e5ddd5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23d1c5b0' fill-opacity='0.2' d='M20 20h60v60H20z'/%3E%3C/svg%3E");
+}
+
+/* Chat Header */
+.chat-header.whatsapp {
+  padding: 10px 16px;
+  background-color: #f0f2f5;
+  display: flex;
+  align-items: center;
+  border-left: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.chat-header.whatsapp .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3182ce;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-right: 15px;
+  position: relative;
+}
+
+.chat-header.whatsapp .contact-info {
+  flex: 1;
+}
+
+.chat-header.whatsapp .contact-info h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 3px 0;
+}
+
+.chat-header.whatsapp .contact-info p {
+  font-size: 0.8rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* Chat Messages */
+.chat-messages.whatsapp {
+  flex: 1;
+  padding: 20px 40px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  max-width: 65%;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  border-radius: 7.5px;
+  position: relative;
+  word-wrap: break-word;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+}
+
+.message.received {
+  align-self: flex-start;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border-top-left-radius: 0;
+}
+
+.message.sent {
+  align-self: flex-end;
+  background-color: #d9fdd3;
+  color: #1a1a1a;
+  border-top-right-radius: 0;
+}
+
+.message-content {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 5px;
+}
+
+.message .timestamp {
+  font-size: 0.7rem;
+  color: #666666;
+  text-align: right;
+}
+
+.message .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #3182ce;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* Message Input Area */
+.message-input.whatsapp {
+  padding: 10px 16px;
+  background-color: #f0f2f5;
+  border-top: 1px solid #e0e0e0;
+}
+
+.message-input.whatsapp form {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 5px 15px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.message-input.whatsapp input {
+  flex: 1;
+  border: none;
+  padding: 9px 12px;
+  font-size: 0.95rem;
+  border-radius: 20px;
+  outline: none;
+}
+
+.message-input.whatsapp button {
+  background: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 10px;
+  transition: background 0.2s;
+}
+
+.message-input.whatsapp button:hover {
+  background: #2c6cb0;
+}
+
+.message-input.whatsapp button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* No Conversation Selected */
+.no-conversation-selected.whatsapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #f0f2f5;
+  text-align: center;
+  padding: 20px;
+}
+
+.no-conversation-selected.whatsapp p {
+  color: #666666;
+  font-size: 1.2rem;
+  max-width: 300px;
+}
+
+/* Loading State */
+.messaging.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #f0f2f5;
+}
+
+/* Search Results */
+.search-results.whatsapp {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.search-result-item.whatsapp {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-result-item.whatsapp:hover {
+  background-color: #f5f5f5;
+}
+
+.search-result-item.whatsapp .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #3182ce;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.search-result-item.whatsapp .user-info {
+  flex: 1;
+}
+
+.search-result-item.whatsapp .user-info h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 3px 0;
+}
+
+.search-result-item.whatsapp .user-info .user-headline {
+  font-size: 0.85rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .whatsapp-messaging {
+    flex-direction: column;
+  }
+  
+  .contacts-sidebar {
+    width: 100%;
+    min-width: auto;
+    height: 100%;
+  }
+  
+  .chat-area {
+    display: none;
+  }
+  
+  .chat-area.active {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+  
+  .chat-messages.whatsapp {
+    padding: 15px 20px;
+  }
+  
+  .message {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .message {
+    max-width: 85%;
+  }
+  
+  .contacts-header {
+    padding: 8px 12px;
+  }
+  
+  .conversation-item.whatsapp {
+    padding: 10px 12px;
+  }
+  
+  .conversation-avatar {
+    width: 45px;
+    height: 45px;
+    margin-right: 12px;
+  }
+  
+  .chat-header.whatsapp {
+    padding: 8px 12px;
+  }
+  
+  .chat-header.whatsapp .avatar {
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
+  }
+}
+
+/* Profile Picture Preview */
+.user-profile-avatar-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+  border: 2px solid #e2e8f0;
+}
+
+/* User Profile Posts */
+.posts-list {
+  width: 100%;
+}
+
+.post-item {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.post-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-user-info h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.post-user-info .post-date {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.post-content {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.post-media {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.post-media .post-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 0.75rem;
+  background-color: #f8fafc;
+}
+
+.post-media .post-image:last-child {
+  margin-bottom: 0;
+}
+
+.post-media .post-image:hover {
+  transform: scale(1.02);
+}
+
+.post-stats {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f4f8;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments for User Profile Posts */
+@media (max-width: 768px) {
+  .post-item {
+    padding: 1.25rem;
+  }
+  
+  .post-header {
+    gap: 0.75rem;
+  }
+  
+  .post-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .post-media .post-image {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-media .post-image {
+    max-height: 200px;
+  }
+}
+
+/* Maintain Previous Aesthetics */
+.user-profile-container {
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  background-color: #F9FAFB;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Other User Profile Styles */
+.user-profile {
+  font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+  background-color: #F9FAFB;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.profile-header {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-picture-container {
+  flex-shrink: 0;
+}
+
+.avatar-large {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+.headline {
+  color: #6B7280;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.location {
+  color: #6B7280;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.profile-meta {
+  display: flex;
+  gap: 1rem;
+}
+
+.role {
+  background-color: #EBF5FB;
+  color: #0077B6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.profile-view {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .profile-view {
+    grid-template-columns: 30% 70%;
+  }
+}
+
+.profile-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.profile-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  border-bottom: 1px solid #E5E7EB;
+  padding-bottom: 0.75rem;
+}
+
+.bio-text {
+  line-height: 1.6;
+  color: #374151;
+}
+
+.placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background-color: #EBF5FB;
+  color: #0077B6;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.experience-list,
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.experience-item,
+.education-item {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid #E5E7EB;
+}
+
+.experience-item h3,
+.education-item h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+}
+
+.company,
+.degree {
+  margin: 0 0 0.25rem 0;
+  color: #0077B6;
+  font-weight: 500;
+}
+
+.dates {
+  margin: 0 0 0.5rem 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.description {
+  margin: 0;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* Posts section in profile */
+.posts-list {
+  width: 100%;
+}
+
+.post-item {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.post-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-user-info h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  color: #1a1a1a;
+}
+
+.post-user-info .post-date {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+}
+
+.post-content {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.post-media {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.post-media .post-image {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 0.75rem;
+  background-color: #f8fafc;
+}
+
+.post-media .post-image:last-child {
+  margin-bottom: 0;
+}
+
+.post-media .post-image:hover {
+  transform: scale(1.02);
+}
+
+.post-stats {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f4f8;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Posts section in profile */
+.posts-list {
+  width: 100%;
+}
+
+.profile-section:last-child {
+  grid-column: 1 / -1;
+}
+
+.post-item {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 2.5rem;
+  margin-bottom: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.post-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.post-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-user-info h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+  color: #1a1a1a;
+}
+
+/* Posts section in profile */
+.posts-list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-section:last-child {
+  grid-column: 1 / -1;
+  padding: 0;
+  margin: 0;
+}
+
+.post-item {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.post-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.post-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-user-info h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+}
+
+.post-user-info .post-date {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.post-content {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #374151;
+}
+
+.post-media {
+  width: 100%;
+  margin: 1.5rem 0 2rem;
+}
+
+.post-media .post-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 1rem;
+  background-color: #f8fafc;
+}
+
+.post-media .post-image:last-child {
+  margin-bottom: 0;
+}
+
+.post-media .post-image:hover {
+  transform: scale(1.02);
+}
+
+.post-stats {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f4f8;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .user-profile {
+    padding: 1rem;
+  }
+  
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .profile-meta {
+    justify-content: center;
+  }
+  
+  .avatar-large {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .profile-section {
+    padding: 1.5rem;
+  }
+  
+  .profile-section:last-child {
+    grid-column: auto;
+    padding: 0;
+  }
+  
+  .post-item {
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .post-header {
+    gap: 1rem;
+  }
+  
+  .post-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .post-content {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .post-media {
+    margin: 1.25rem 0 1.5rem;
+  }
+  
+  .post-media .post-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-header {
+    padding: 1.5rem;
+  }
+  
+  .avatar-large {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .profile-section {
+    padding: 1rem;
+  }
+  
+  .profile-section h2 {
+    font-size: 1.25rem;
+  }
+  
+  .post-item {
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .post-header {
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .post-avatar {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .post-user-info h4 {
+    font-size: 1rem;
+  }
+  
+  .post-content {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .post-media {
+    margin: 1rem 0 1.25rem;
+  }
+  
+  .post-media .post-image {
+    max-height: 250px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .post-stats {
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* RIASEC Assessment Styles */
+.riasec-assessment {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.riasec-assessment .assessment-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.riasec-assessment .assessment-header h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.riasec-assessment .progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.riasec-assessment .progress-fill {
+  height: 100%;
+  background-color: #3498db;
+  transition: width 0.3s ease;
+}
+
+.riasec-assessment .progress-text {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+.riasec-assessment .question-container {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.riasec-assessment .assessment-title {
+  color: #2c3e50;
+  font-size: 22px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.riasec-assessment .question-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.riasec-assessment .option-button {
+  display: block;
+  padding: 20px;
+  border: 2px solid #bdc3c7;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  text-align: center;
+  font-size: 16px;
+}
+
+.riasec-assessment .option-button:hover {
+  border-color: #3498db;
+  background-color: #f8f9fa;
+}
+
+.riasec-assessment .option-button.selected {
+  border-color: #3498db;
+  background-color: #e1f0fa;
+  font-weight: bold;
+}
+
+.riasec-assessment .radio-input {
+  display: none;
+}
+
+.riasec-assessment .assessment-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.riasec-assessment .btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.riasec-assessment .btn-primary {
+  background-color: #3498db;
+  color: white;
+}
+
+.riasec-assessment .btn-primary:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.riasec-assessment .btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.riasec-assessment .btn-secondary:hover:not(:disabled) {
+  background-color: #7f8c8d;
+}
+
+.riasec-assessment .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.riasec-assessment .answered-count {
+  text-align: center;
+  margin-top: 20px;
+  color: #7f8c8d;
+  font-size: 14px;
+}
+
+.riasec-assessment .loading-container {
+  text-align: center;
+}
+
+.riasec-assessment .loading {
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+.riasec-assessment .loading-details {
+  font-size: 16px;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.riasec-assessment .career-recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.riasec-assessment .career-card {
+  background: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.riasec-assessment .career-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.riasec-assessment .career-header h3 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.riasec-assessment .match-score {
+  background-color: #3498db;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.riasec-assessment .career-details {
+  margin: 20px 0;
+}
+
+.riasec-assessment .skills-section h4,
+.riasec-assessment .weights-section h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.riasec-assessment .weights-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.riasec-assessment .weights-section li {
+  padding: 5px 0;
+  color: #7f8c8d;
+}
+
+.riasec-assessment .select-career-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.riasec-assessment .select-career-btn:hover {
+  background-color: #219653;
+}
+
+.riasec-assessment .confirmation-card {
+  background: white;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.riasec-assessment .confirmation-card h3 {
+  color: #27ae60;
+  margin-bottom: 20px;
+}

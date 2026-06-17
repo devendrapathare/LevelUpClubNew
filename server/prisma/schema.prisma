@@ -1,0 +1,303 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User roles enumeration
+enum Role {
+  student
+  professional
+  recruiter
+  admin
+}
+
+enum ConnectionStatus {
+  pending
+  accepted
+  rejected
+  blocked
+}
+
+// Main user model
+model User {
+  id                  String   @id @default(uuid())
+  role                Role     @default(student)
+  email               String   @unique
+  password_hash       String?
+  name                String
+  headline            String?
+  bio                 String?
+  location            String?
+  profile_picture_url String?
+  profile_picture_data Bytes?
+  selected_career     String?  // Added field for storing user's selected career
+  xp                  Int      @default(0)
+  level               Int      @default(1)
+  created_at          DateTime @default(now())
+  updated_at          DateTime @updatedAt
+
+  // Relations
+  profile              Profile?
+  created_assessments  Assessment[]       @relation("CreatedAssessments")
+  test_attempts        TestAttempt[]
+  career_matches       CareerMatch[]
+  sent_connections     Connection[]       @relation("sent_connections")
+  received_connections Connection[]       @relation("received_connections")
+  posts                Post[]
+  comments             Comment[]
+  likes                Like[]
+  jobs_posted          Job[]
+  applications         JobApplication[]
+  messages_sent        Message[]
+  conversations        ConversationUser[]
+  task_assignments     TaskAssignment[]
+  goals                Goal[]
+}
+
+// Extended user profile
+model Profile {
+  user_id        String   @id
+  education      Json[]
+  experience     Json[]
+  skills         Json[]
+  certifications Json[]
+  resume_url     String?
+  resume_data    Bytes?
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+
+  // Relations
+  user User @relation(fields: [user_id], references: [id])
+}
+
+// Assessment model
+model Assessment {
+  id         String   @id @default(uuid())
+  name       String
+  schema     Json
+  created_by String?
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  // Relations
+  creator  User?         @relation("CreatedAssessments", fields: [created_by], references: [id])
+  attempts TestAttempt[]
+}
+
+// Test attempts
+model TestAttempt {
+  id            String   @id @default(uuid())
+  user_id       String
+  assessment_id String
+  answers       Json
+  scores        Json
+  completed_at  DateTime @default(now())
+
+  // Relations
+  user       User       @relation(fields: [user_id], references: [id])
+  assessment Assessment @relation(fields: [assessment_id], references: [id])
+}
+
+// Career matches from AI recommendations
+model CareerMatch {
+  id                  String   @id @default(uuid())
+  user_id             String
+  input_snapshot      Json
+  gemini_prompt       String
+  gemini_response_raw Json
+  matches             Json
+  generated_at        DateTime @default(now())
+
+  // Relations
+  user User @relation(fields: [user_id], references: [id])
+}
+
+// Connections between users
+model Connection {
+  id           String           @id @default(uuid())
+  requester_id String
+  receiver_id  String
+  status       ConnectionStatus @default(pending)
+  created_at   DateTime         @default(now())
+  accepted_at  DateTime?
+
+  // Relations
+  requester User @relation("sent_connections", fields: [requester_id], references: [id])
+  receiver  User @relation("received_connections", fields: [receiver_id], references: [id])
+}
+
+// Posts in the community feed
+model Post {
+  id         String   @id @default(uuid())
+  user_id    String
+  content    String
+  media_data Bytes[]
+  created_at DateTime @default(now())
+  visibility String   @default("public") // public/connections
+
+  // Relations
+  user     User      @relation(fields: [user_id], references: [id])
+  comments Comment[]
+  likes    Like[]
+}
+
+// Comments on posts
+model Comment {
+  id         String   @id @default(uuid())
+  post_id    String
+  user_id    String
+  content    String
+  created_at DateTime @default(now())
+
+  // Relations
+  post Post @relation(fields: [post_id], references: [id])
+  user User @relation(fields: [user_id], references: [id])
+}
+
+// Likes on posts
+model Like {
+  id         String   @id @default(uuid())
+  post_id    String
+  user_id    String
+  created_at DateTime @default(now())
+
+  // Relations
+  post Post @relation(fields: [post_id], references: [id])
+  user User @relation(fields: [user_id], references: [id])
+
+  @@unique([post_id, user_id])
+}
+
+// Jobs posted by recruiters
+model Job {
+  id           String    @id @default(uuid())
+  recruiter_id String
+  title        String
+  description  String
+  requirements Json
+  location     String?
+  remote_flag  Boolean   @default(false)
+  salary_range String?
+  created_at   DateTime  @default(now())
+  expires_at   DateTime?
+
+  // Relations
+  recruiter    User             @relation(fields: [recruiter_id], references: [id])
+  applications JobApplication[]
+}
+
+// Job applications by students
+model JobApplication {
+  id         String   @id @default(uuid())
+  job_id     String
+  user_id    String
+  resume_url String?
+  message    String?
+  created_at DateTime @default(now())
+
+  // Relations
+  job  Job  @relation(fields: [job_id], references: [id])
+  user User @relation(fields: [user_id], references: [id])
+
+  @@unique([job_id, user_id])
+}
+
+// Tasks for students
+model Task {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  xp_reward   Int
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  // Relations
+  task_assignments TaskAssignment[]
+}
+
+// Task assignments to users
+model TaskAssignment {
+  id           String   @id @default(uuid())
+  task_id      String
+  user_id      String
+  status       String   @default("pending") // pending, completed, verified
+  file_url     String?
+  submitted_at DateTime?
+  verified_at  DateTime?
+  xp_earned    Int?
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+
+  // Relations
+  task Task @relation(fields: [task_id], references: [id])
+  user User @relation(fields: [user_id], references: [id])
+
+  @@unique([task_id, user_id])
+}
+
+// Conversations between users
+model Conversation {
+  id              String             @id @default(uuid())
+  participants    ConversationUser[]
+  messages        Message[]
+  last_message_at DateTime?
+  created_at      DateTime           @default(now())
+}
+
+// Junction table for conversation participants
+model ConversationUser {
+  id              String   @id @default(uuid())
+  conversation_id String
+  user_id         String
+  joined_at       DateTime @default(now())
+
+  // Relations
+  conversation Conversation @relation(fields: [conversation_id], references: [id])
+  user         User         @relation(fields: [user_id], references: [id])
+
+  @@unique([conversation_id, user_id])
+}
+
+// Messages within conversations
+model Message {
+  id              String   @id @default(uuid())
+  conversation_id String
+  sender_id       String
+  content         String
+  attachments     Json?
+  sent_at         DateTime @default(now())
+  read_by         String[]
+
+  // Relations
+  conversation Conversation @relation(fields: [conversation_id], references: [id])
+  sender       User         @relation(fields: [sender_id], references: [id])
+}
+
+// Goals for users
+model Goal {
+  id          String   @id @default(uuid())
+  user_id     String
+  type        String   // "monthly" or "yearly"
+  title       String
+  description String
+  target      Int
+  completed   Int      @default(0)
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+
+  // Relations
+  user User @relation(fields: [user_id], references: [id])
+
+  @@index([user_id, type])
+}
